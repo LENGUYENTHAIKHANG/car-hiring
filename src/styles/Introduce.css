@@ -1,0 +1,138 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.cards{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    }
+    
+.cards .face {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    color: black;
+    margin: 10px;
+    border-top: 1px solid rgba(128, 127, 127, 0.767);
+    border-bottom: 7px solid rgb(119, 118, 115);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 10px 30px 30px rgba(63, 63, 62, 0.3);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    backface-visibility: hidden;
+    transition: 0.5s ease-in-out;
+    transform: perspective(500px) rotateY(0deg);
+}
+
+.cards:hover .face.front {
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.cards .face.back {
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.cards:hover .face.back {
+    transform: perspective(500px) rotateY(360deg);
+    background: rgb(0, 0, 0);
+    font-size: 20px;
+    box-shadow: 10px 30px 30px white;
+}
+
+.cards .face.back p {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.titler h1 {
+    font-size: 70px;
+    background: -webkit-linear-gradient(100deg, rgb(182, 184, 184), rgb(2, 2, 2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    padding: 50px 0;
+    text-align: center;
+}
+.titler h1::after {
+    content: '';
+    background-color: rgb(16, 17, 17);
+    display: block;
+    width: 150px;
+    margin: 10px auto;
+    height: 5px;
+    border-radius: 3px;
+}
+
+.cards .face.front h3 {
+    margin-top: 15px;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+}
+.cards .face.front a{
+    font-size: 70px;
+    color: rgba(22, 133, 125, 0.966);
+}
+
+.cards .face.face.front img {
+    width: 120px;
+    height: 120px;
+}
+
+@media screen and (min-width: 575px) and (max-width: 991px) {
+    .cards {
+        align-items: center;
+        align-content: center;
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .col-md-4 {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cards {
+        margin: 20px 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 460px) and (max-width: 575px) {
+    .cards {
+        align-items: center;
+        align-content: center;
+        margin: 15px 0;
+        width: 100%;
+
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .col-xs-12 {
+        padding: 0 50px;
+    }
+}
